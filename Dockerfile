@@ -18,6 +18,9 @@ USER node-red
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
 RUN npm install
+# install modbustcp and influxdb package
+RUN npm install node-red-contrib-modbustcp
+RUN npm install node-red-contrib-influxdb
 
 # User configuration directory volume
 VOLUME ["/data"]
